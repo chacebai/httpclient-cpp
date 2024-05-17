@@ -23,8 +23,9 @@ int main()
     // lResultHTTPCode);
     CHTTPClient::HeadersMap RequestHeaders;
     CHTTPClient::HttpResponse ServerResponse;
-    std::string strPostData = "params=qq5MgqmIaq2SeJr/wdCni0nHc7NglWa17wCD0qvyxFvCE1OG3j1EKtP3mJrTnTnwH4MZjR5H5Y5yzPBdVcpRZvQL+5bF7lXXpiUdNHXXCFT8A5DGQiqVoaDxY62c9pFDNqMg93nG/uimVilC5RSB/SHA22FRhFLYIemByp8fb+U=";
-    // std::string strPostData = "params=" + HTTPClient.url_encode("qq5MgqmIaq2SeJr/wdCni0nHc7NglWa17wCD0qvyxFvCE1OG3j1EKtP3mJrTnTnwH4MZjR5H5Y5yzPBdVcpRZvQL+5bF7lXXpiUdNHXXCFT8A5DGQiqVoaDxY62c9pFDNqMg93nG/uimVilC5RSB/SHA22FRhFLYIemByp8fb+U=");
+    // std::string strPostData = "params=qq5MgqmIaq2SeJr/wdCni0nHc7NglWa17wCD0qvyxFvCE1OG3j1EKtP3mJrTnTnwH4MZjR5H5Y5yzPBdVcpRZvQL+5bF7lXXpiUdNHXXCFT8A5DGQiqVoaDxY62c9pFDNqMg93nG/uimVilC5RSB/SHA22FRhFLYIemByp8fb+U=";
+    // 必须要做url编码
+    std::string strPostData = "params=" + HTTPClient.url_encode("qq5MgqmIaq2SeJr/wdCni0nHc7NglWa17wCD0qvyxFvCE1OG3j1EKtP3mJrTnTnwH4MZjR5H5Y5yzPBdVcpRZvQL+5bF7lXXpiUdNHXXCFT8A5DGQiqVoaDxY62c9pFDNqMg93nG/uimVilC5RSB/SHA22FRhFLYIemByp8fb+U=");
     HTTPClient.Post("http://101.227.110.117:29002/advisor/user/h5/customer/syncUpdateParams", RequestHeaders, strPostData, ServerResponse);
     cout << "iCode: " << ServerResponse.iCode << endl;
     cout << "strBody: " << ServerResponse.strBody << endl;
